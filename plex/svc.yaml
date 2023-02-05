@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/description: Plex NodePort Mapping
+  creationTimestamp: "2023-02-04T08:07:58Z"
+  labels:
+    name: plex
+  name: plex-nodeport
+  namespace: default
+  resourceVersion: "3953"
+  uid: 15dfdf90-03b9-4ca8-9e66-daf952ad0f8f
+spec:
+  clusterIP: 10.43.70.159
+  clusterIPs:
+  - 10.43.70.159
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: plex-nodeport
+    nodePort: 32400
+    port: 32400
+    protocol: TCP
+    targetPort: 32400
+  selector:
+    name: plex
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
