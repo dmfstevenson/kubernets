@@ -12,7 +12,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   local:
-    path: "/mnt/c/Users/Predj/k8s/plex"
+    path: "/mnt/c/Users/dstev/k8s/plex"
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -36,7 +36,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   local:
-    path: "/mnt/c/Users/Predj/TV\ Shows"
+    path: "/mnt/c/Users/dstev/TV\ Shows"
   nodeAffinity:
     required:
       nodeSelectorTerms:
