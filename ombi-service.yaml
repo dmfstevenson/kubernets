@@ -9,7 +9,7 @@ metadata:
   name: ombi
   namespace: default
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: "3579"
       port: 3579

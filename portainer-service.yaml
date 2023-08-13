@@ -9,7 +9,7 @@ metadata:
   name: portainer
   namespace: default
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: "9000"
       port: 9000

@@ -9,7 +9,7 @@ metadata:
   name: prowlarr
   namespace: default
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: "9696"
       port: 9696

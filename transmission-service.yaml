@@ -9,7 +9,7 @@ metadata:
   name: transmission
   namespace: default
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: "9091"
       port: 9091

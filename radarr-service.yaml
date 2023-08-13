@@ -9,7 +9,7 @@ metadata:
   name: radarr
   namespace: default
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: "7878"
       port: 7878

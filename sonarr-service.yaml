@@ -9,7 +9,7 @@ metadata:
   name: sonarr
   namespace: default
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: "8989"
       port: 8989
