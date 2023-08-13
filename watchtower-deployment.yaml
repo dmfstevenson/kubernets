@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert --volumes hostPath
+    kompose.version: 1.30.0 (9d8dcb518)
+  labels:
+    io.kompose.service: watchtower
+  name: watchtower
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: watchtower
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert --volumes hostPath
+        kompose.version: 1.30.0 (9d8dcb518)
+      labels:
+        io.kompose.network/kube-default: "true"
+        io.kompose.service: watchtower
+    spec:
+      containers:
+        - env:
+            - name: TZ
+              value: Australia/Sydney
+            - name: WATCHTOWER_CLEANUP
+              value: "true"
+            - name: WATCHTOWER_POLL_INTERVAL
+              value: "3600"
+          image: containrrr/watchtower
+          name: watchtower
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/run/docker.sock
+              name: watchtower-hostpath0
+      restartPolicy: Always
+      volumes:
+        - hostPath:
+            path: /var/run/docker.sock
+          name: watchtower-hostpath0
+status: {}
