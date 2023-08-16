@@ -28,7 +28,7 @@ spec:
         - args:
             - -H
             - unix:///var/run/docker.sock
-          image: portainer/portainer-ce
+          image: portainer/portainer-ce@sha256:4b9873531d38af12dfd4dbc51af7c866ba8494fc25ee3fe47e7572e6e8dd6b23
           name: portainer
           ports:
             - containerPort: 9000
