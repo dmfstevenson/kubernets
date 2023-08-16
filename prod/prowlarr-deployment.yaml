@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert --volumes hostPath
+    kompose.version: 1.30.0 (9d8dcb518)
+  labels:
+    io.kompose.service: prowlarr
+  name: prowlarr
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: prowlarr
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert --volumes hostPath
+        kompose.version: 1.30.0 (9d8dcb518)
+      labels:
+        io.kompose.network/kube-network: "true"
+        io.kompose.service: prowlarr
+    spec:
+      restartPolicy: Always
+      containers:
+        - env:
+            - name: PGID
+              value: "1000"
+            - name: PUID
+              value: "1000"
+            - name: TZ
+              value: Etc/UTC
+          image: lscr.io/linuxserver/prowlarr@sha256:5d8bcc9e793660c3609cdbb9fb2add6c191e103446b6ea6d00f7713bc55bd134
+          name: prowlarr
+          ports:
+            - containerPort: 9696
+              hostPort: 9696
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /config
+              name: prowlarr-hostpath0
+      volumes:
+        - hostPath:
+            path: /mnt/c/Users/dstev/docker/prowlarr/config
+          name: prowlarr-hostpath0
+status: {}

@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert --volumes hostPath
+    kompose.version: 1.30.0 (9d8dcb518)
+  labels:
+    io.kompose.service: sonarr
+  name: sonarr
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: sonarr
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert --volumes hostPath
+        kompose.version: 1.30.0 (9d8dcb518)
+      labels:
+        io.kompose.network/kube-network: "true"
+        io.kompose.service: sonarr
+    spec:
+      containers:
+        - env:
+            - name: PGID
+              value: "1000"
+            - name: PUID
+              value: "1000"
+            - name: TZ
+              value: Australia/Sydney
+            - name: UMASK_SET
+              value: "022"
+          image: ghcr.io/linuxserver/sonarr@sha256:8feed315504859efbd180ccc3c44d224d8cfc006ceef185c41c1c99e44c6de03
+          name: sonarr
+          ports:
+            - containerPort: 8989
+              hostPort: 8989
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /config
+              name: sonarr-hostpath0
+            - mountPath: /tv
+              name: sonarr-hostpath1
+            - mountPath: /downloads
+              name: sonarr-hostpath2
+      restartPolicy: Always
+      volumes:
+        - hostPath:
+            path: /mnt/c/Users/dstev/docker/sonarr/config
+          name: sonarr-hostpath0
+        - hostPath:
+            path: /mnt/d/TV Shows
+          name: sonarr-hostpath1
+        - hostPath:
+            path: /mnt/d/Downloads
+          name: sonarr-hostpath2
+status: {}
