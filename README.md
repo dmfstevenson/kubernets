@@ -1,2 +1,0 @@
-# kubernets
-Kubernets cluster
