@@ -4,12 +4,13 @@
     "config:base"
   ],
   "kubernetes": {
-    "fileMatch": ["\\.yaml$"]
+    "fileMatch": ["\\.yaml$"],
+    "enabled": true,
+    "automerge": true
   },
   
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true
   }
-  
 }
