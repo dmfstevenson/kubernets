@@ -5,5 +5,11 @@
   ],
   "kubernetes": {
     "fileMatch": ["\\.yaml$"]
+  },
+  
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
   }
+  
 }
