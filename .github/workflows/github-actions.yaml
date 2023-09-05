@@ -22,4 +22,4 @@ jobs:
 
           # Allowed values: MERGE | SQUASH | REBASE
           # Defaults to MERGE
-          merge-method: MERGE
+          merge-method: SQUASH
