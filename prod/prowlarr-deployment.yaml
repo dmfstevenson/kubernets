@@ -33,7 +33,7 @@ spec:
               value: "1000"
             - name: TZ
               value: Etc/UTC
-          image: lscr.io/linuxserver/prowlarr@sha256:9592abeaa562c6287b79fa373843c9299de88fd486462aed2676b788ee2b2ebb
+          image: lscr.io/linuxserver/prowlarr@sha256:7ce25c05f90146b08e9474143dfea094fa99bdba54136ceecd5bce76ad0a4cec
           name: prowlarr
           ports:
             - containerPort: 9696
