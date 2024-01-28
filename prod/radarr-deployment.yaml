@@ -34,7 +34,7 @@ spec:
               value: Australia/Sydney
             - name: UMASK
               value: "022"
-          image: ghcr.io/linuxserver/radarr@sha256:39b9d30e81b12da741b875965edfa08d6b3bd157d9012ebe072c4c3f08211174
+          image: ghcr.io/linuxserver/radarr@sha256:99b428ed4c2394cc5bf4ad3802487424f4f73883286bbbb14b38e1620a348e1d
           name: radarr
           ports:
             - containerPort: 7878
