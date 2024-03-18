@@ -51,7 +51,7 @@ spec:
       restartPolicy: Always
       volumes:
         - hostPath:
-            path: /mnt/c/Users/dstev/docker/sonarr/config
+            path: /mnt/d/docker/sonarr/config
           name: sonarr-hostpath0
         - hostPath:
             path: /mnt/d/TV Shows

@@ -51,7 +51,7 @@ spec:
       restartPolicy: Always
       volumes:
         - hostPath:
-            path: /mnt/c/Users/dstev/docker/ombi/config
+            path: /mnt/d/docker/ombi/config
           name: ombi-hostpath0
         - hostPath:
             path: /mnt/d/Movies

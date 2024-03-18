@@ -45,6 +45,6 @@ spec:
               name: prowlarr-hostpath0
       volumes:
         - hostPath:
-            path: /mnt/c/Users/dstev/docker/prowlarr/config
+            path: /mnt/d/docker/prowlarr/config
           name: prowlarr-hostpath0
 status: {}

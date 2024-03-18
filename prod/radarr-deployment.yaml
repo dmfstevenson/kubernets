@@ -51,7 +51,7 @@ spec:
       restartPolicy: Always
       volumes:
         - hostPath:
-            path: /mnt/c/Users/dstev/docker/radarr/config
+            path: /mnt/d/docker/radarr/config
           name: radarr-hostpath0
         - hostPath:
             path: /mnt/d/Movies

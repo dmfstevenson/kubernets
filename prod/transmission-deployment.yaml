@@ -52,12 +52,12 @@ spec:
       restartPolicy: Always
       volumes:
         - hostPath:
-            path: /mnt/c/Users/dstev/docker/transmission/config
+            path: /mnt/d/docker/transmission/config
           name: transmission-hostpath0
         - hostPath:
             path: /mnt/d/Downloads
           name: transmission-hostpath1
         - hostPath:
-            path: /mnt/c/Users/dstev/docker/transmission/watch
+            path: /mnt/d/docker/transmission/watch
           name: transmission-hostpath2
 status: {}
