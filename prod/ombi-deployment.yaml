@@ -34,7 +34,7 @@ spec:
               value: "1000"
             - name: TZ
               value: Australia/Sydney
-          image: lscr.io/linuxserver/ombi@sha256:00285a58e125c7f34f5a381d0fc46d6f4c7f5e98591edecd911439ef19e903b5
+          image: lscr.io/linuxserver/ombi@sha256:b0512d703d9ff3966f0c858f5701be759764e5514a91c49c1d44ac11a27d222c
           name: ombi
           ports:
             - containerPort: 3579
