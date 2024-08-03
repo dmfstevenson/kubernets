@@ -34,7 +34,7 @@ spec:
               value: Australia/Sydney
             - name: UMASK_SET
               value: "022"
-          image: ghcr.io/linuxserver/sonarr@sha256:f30e6d740470b37575afcdcc90983b5db37fb1b311367edf5064305f2cf08cf4
+          image: ghcr.io/linuxserver/sonarr@sha256:e4b436ce230746b19f32babe54647e7b23d450e54e76fc61e180fdc655c35827
           name: sonarr
           ports:
             - containerPort: 8989
