@@ -32,7 +32,7 @@ spec:
               value: "1000"
             - name: TZ
               value: Etc/UTC
-          image: lscr.io/linuxserver/transmission@sha256:7eacf1caf62c3857228d38326eb6474951015f1c26727d77d43be9e361919763
+          image: lscr.io/linuxserver/transmission@sha256:39c07c53199dc283b5b293ec03091bc6cade0ee39a0717e0a3a5066a213b3f90
           name: transmission
           ports:
             - containerPort: 9091
